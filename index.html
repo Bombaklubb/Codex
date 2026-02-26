@@ -1,1 +1,80 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NP Träning – Åk 3, 6, 9</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>NP Träning</h1>
+      <p>
+        Träna läsförståelse och skrivuppgifter för nationella proven i åk 3, 6 och 9.
+      </p>
+    </header>
 
+    <main>
+      <section class="controls card">
+        <h2>Välj övning</h2>
+        <div class="form-grid">
+          <label>
+            Årskurs
+            <select id="gradeSelect"></select>
+          </label>
+          <label>
+            Ämne
+            <select id="subjectSelect"></select>
+          </label>
+          <label>
+            Del
+            <select id="sectionSelect"></select>
+          </label>
+          <button id="loadBtn" class="primary">Ladda uppgift</button>
+        </div>
+      </section>
+
+      <section id="exerciseCard" class="card hidden" aria-live="polite">
+        <h2 id="exerciseTitle"></h2>
+        <p id="exerciseMeta" class="muted"></p>
+        <article>
+          <h3>Text / uppgift</h3>
+          <p id="exercisePrompt"></p>
+        </article>
+
+        <article id="questionArea">
+          <h3>Frågor</h3>
+          <ol id="questionsList"></ol>
+        </article>
+
+        <article id="writingArea" class="hidden">
+          <h3>Skrivsvar</h3>
+          <textarea
+            id="writingAnswer"
+            rows="8"
+            placeholder="Skriv ditt svar här..."
+          ></textarea>
+          <div class="actions">
+            <button id="saveDraftBtn">Spara utkast</button>
+            <button id="checkStructureBtn">Snabb återkoppling</button>
+          </div>
+          <p id="feedback" class="feedback"></p>
+        </article>
+      </section>
+
+      <section class="card">
+        <h2>Dina senaste utkast</h2>
+        <ul id="draftList" class="draft-list"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Byggd för övning. Lägg till fler tidigare provuppgifter i
+        <code>data/examBank.js</code>.
+      </p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
